@@ -80,7 +80,7 @@ do
         continue
     fi
 
-    local file_type=$(file --mime-type -b "$1")
+    file_type=$(file --mime-type -b "$file")
     if [[ $file_type == application/zip || $file_type == application/x-tar || $file_type == application/gzip || $file_type == application/x-bzip2 ]]; then
         if check_compressed_binary "$file"; then
             echo "Binary archive found: $file"
