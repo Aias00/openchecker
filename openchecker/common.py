@@ -14,7 +14,7 @@ def shell_exec(shell_script, param=None):
         Tuple of (stdout, stderr) - stderr is None on success
     """
     if param is not None:
-        cmd = ["/bin/bash", "-c", shell_script + " " + param]
+        cmd = ["/bin/bash", "-c", shell_script, "shell_exec", param]
     else:
         cmd = ["/bin/bash", "-c", shell_script]
     
