@@ -1,6 +1,11 @@
 import subprocess
+import shlex
 from pathlib import Path
 from typing import List, Dict, Tuple, Any
+
+
+def shell_quote(value):
+    return shlex.quote(value)
 
 def shell_exec(shell_script, param=None):
     """
