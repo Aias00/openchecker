@@ -1,5 +1,5 @@
 def _get_project_name(project_url):
-    return f"""project_name=$(basename {project_url} | sed 's/\\.git$//') > /dev/null"""
+    return f"""project_name=$(basename -- {project_url} | sed 's/\\.git$//') > /dev/null"""
 
 def _clone_project(project_url, depth=False):
     depth_flag = "--depth=1" if depth else ""
